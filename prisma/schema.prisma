@@ -10,10 +10,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String  @id @default(cuid()) @db.Uuid
-  updatedAt DateTime @updatedAt @default(now())
-  email     String  @unique
-  name      String?
+model user {
+  id           Int           @id @default(autoincrement())
+  googleId     String?
+  email        String        @unique
+  password     String?
+  tfaStatus    TfaStatusEnum @default(init)
+  tfaSecret    String?
+  permissions  Json?
+  facebookId   String?
+  recoveryCode String?
 }
 
+enum TfaStatusEnum {
+  init
+  enable
+  disable
+}
