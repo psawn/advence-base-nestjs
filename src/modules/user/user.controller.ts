@@ -1,7 +1,7 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { UserService } from './user.service';
 import { SignInSchema, SignInSchemaType } from './schemas';
-import { CustomValidationPipe } from 'src/transform';
+import { CustomValidationPipe } from 'src/pipes';
 
 @Controller('users')
 export class UserController {

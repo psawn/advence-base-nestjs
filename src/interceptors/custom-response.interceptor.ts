@@ -18,7 +18,7 @@ export class ResponseDto {
 }
 
 @Injectable()
-export class ResponseInterceptor implements NestInterceptor<ResponseDto> {
+export class CustomResponseInterceptor implements NestInterceptor<ResponseDto> {
   intercept(
     context: ExecutionContext,
     next: CallHandler,

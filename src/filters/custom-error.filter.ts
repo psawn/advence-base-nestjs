@@ -7,7 +7,7 @@ import {
 import { Response } from 'express';
 
 @Injectable()
-export class HttpExceptionInterceptor implements ExceptionFilter {
+export class CustomErrorFilter implements ExceptionFilter {
   catch(err: Error, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
